@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ProductEntity.Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div>
+    <hr />
+    <a asp-controller="Product" asp-action="ProductEntry"> ProductEntry </a>
+    <hr />
+    <div class="row">
+        <div class="col-5">
+            <h3> Product </h3>
+            <table class="table table-light table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th> ProductId </th>
+                        <th> ProductName </th>
+                        <th> ProductCode </th>
+                        <th> ProductYear </th>
+                        <th> ChannelId </th>
+                    </tr>
+                </thead>
+                <tbody>
+                     @foreach (var Product in Model)
+                     {
+
+                     
+                        <tr>
+                            <td> @Product.ProductId </td>
+                            <td> @Product.ProductName </td>
+                            <td> @Product.ProductCode </td>
+                            <td> @Product.ProductYear </td>
+                            <td> @Product.ChannelId </td>
+                           
+                    </tr>
+                     }
+               </tbody>
+                     
+
+            </table>
+        </div>
+    </div>
+</div>
+

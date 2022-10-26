@@ -1,0 +1,47 @@
+﻿@model ProductEntity.Product
+@{
+    ViewData["Title"] = "ProductEntry";
+}
+
+<h1>ProductEntry</h1>
+<div>
+    <hr />
+    <a asp-controller="Product" asp-action="Index"> ProductEntry </a>
+    <hr />
+</div>
+<form method="post" enctype="multipart/form-data">
+    <h2> Product Entry </h2>
+    <div class="form-group">
+        <label> Product Name </label>
+        <input type="text" asp-for="ProductName" class="form-control" placeholder="enter Product Name" required />
+    </div>
+    <div class="form-group">
+        <label> Product Code </label>
+        <input type="text" asp-for="ProductCode" class="form-control" placeholder="enter Product Code" required />
+    </div>
+    <div class="form-group">
+        <label> Product Year</label>
+        <input type="text" asp-for="ProductYear" class="form-control" placeholder="enter Product Year" required />
+    </div>
+    <div class="form-group">
+        <label> Product ChannelId </label>
+        <input type="text" asp-for="ChannelId" class="form-control" placeholder="enter Channel Id" required />
+    </div>
+    <input type="submit" value="Save" class="btn btn-outline-success" />
+    <input type="button" value="Reset" class="btn btn-outline-secondary" />
+    <hr />
+    @if (ViewBag.status == "Ok")
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
+    }
+    else if (ViewBag.status == "Error")
+    {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>
+    }
+</form>
+
+
